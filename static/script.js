@@ -117,6 +117,18 @@ $(document).ready(function(){
     addMessageToConversation(conversations[convoIndex]); //and add the received message
   });
   
+  socket.on('connect', function(data){
+    console.log('connected!');
+    if(myUsername != ""){
+      socket.emit('hello', {username: myUsername});
+    }
+    $('head').append('<style> .messages{color:#000;}</style>');
+  });
+  
+  socket.on('disconnect', function(data){
+    $('head').append('<style> .messages{color:#bbb;}</style>');
+  });
+  
   /********************************************************************************************************************
   ********************************************LOGIC HELPER FUNCTIONS***************************************************
   ********************************************************************************************************************/
