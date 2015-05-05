@@ -1,4 +1,5 @@
 from flask import Flask, render_template, session, request
+import os
 from flask.ext.socketio import SocketIO, emit, join_room, leave_room
 
 app = Flask(__name__)
@@ -58,4 +59,4 @@ def hello_new_conenction(data):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    socketio.run(host='0.0.0.0', port=port)
+    socketio.run(app, host='0.0.0.0', port=port)
