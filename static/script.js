@@ -99,7 +99,8 @@ $(document).ready(function(){
   });
   
   socket.on('lost connection', function(data) { //someone leaves the room
-    removeConnectionFromList(data.username); //call helper function
+    removeConnectionFromList(data.username);
+    closeWindow(data.username..replace(/\s+/g, "-"));//call helper function
   });
   
   socket.on('new message', function(data) { //we got a message
@@ -193,6 +194,7 @@ $(document).ready(function(){
                           '<input type="text" class="messenger toSend" onkeydown="if (event.keyCode == 13){ sendMessage(\''+con.sender+'\',this.value); this.value=\'\'}">'+
                         '</div>');                                                //this just catches the `Enter` key event, and calls the sendMessage() function
     refreshConversation(con);
+    $('#'+con.sender.replace(/\s+/g, "-")+'.messenger').focus();
   }
   
   closeWindow = function(windowToClose){ //function that is called when the `X` button is pressed

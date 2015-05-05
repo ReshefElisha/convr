@@ -105,6 +105,7 @@ body{
   padding: 0px 4px 2px 4px;
   position: relative;
   font-size: 0.9em;
+  word-wrap: break-word;
 }
 
 .chatbox .received{
