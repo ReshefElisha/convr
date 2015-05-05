@@ -1,1 +1,1 @@
-web: gunicorn convr:app
+web: python convr.py
