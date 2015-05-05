@@ -100,7 +100,7 @@ $(document).ready(function(){
   
   socket.on('lost connection', function(data) { //someone leaves the room
     removeConnectionFromList(data.username);
-    closeWindow(data.username..replace(/\s+/g, "-"));//call helper function
+    closeWindow(data.username.replace(/\s+/g, "-"));//call helper function
   });
   
   socket.on('new message', function(data) { //we got a message
