@@ -1,1 +1,1 @@
-web: gunicorn convr
+web: gunicorn convr:app
