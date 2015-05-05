@@ -21,7 +21,7 @@ $(document).ready(function(){
               <div id="loginBox">
                 <img src={"static/logo.png"} alt="convR logo"/>
                 <form id="connect" method="POST" action="#">
-                  <input type="text" name="username" id="username"/>
+                  <input type="text" name="username" placeholder="Display Name" id="username"/>
                   <input className="button" type="submit" value="Go"/>
                 </form>
               </div>
